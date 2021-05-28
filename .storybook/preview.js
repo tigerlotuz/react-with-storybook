@@ -1,3 +1,9 @@
+import React from 'react'
+import {ThemeProvider, theme, CSSReset, Box} from '@chakra-ui/react'
+import {addDecorator} from '@storybook/react'
+import Center from '../src/components/Center/Center'
+// Global decorator. ALLT blir wrappat med center komponenten: se nedan
+// addDecorator(story => <Center>{story()}</Center>)
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,3 +18,22 @@ export const parameters = {
     },
   },
 }
+// wrappa in storyn med theme
+addDecorator(story => (
+<ThemeProvider theme={theme}>
+  <CSSReset />
+  <Box m='4'>
+  {story()}
+  </Box>
+  </ThemeProvider>
+))
+export const decorators = [
+  (Story) => (
+<ThemeProvider theme={theme}>
+  <CSSReset />
+  <Box m='4'>
+    <Story />
+  </Box>
+</ThemeProvider>
+  )
+]
