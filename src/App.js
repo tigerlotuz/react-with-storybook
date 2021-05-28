@@ -1,29 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
-// import * as React from 'react'
-// import { ChakraProvider } from "@chakra-ui/react"
 
-function App() {
+import "./App.css";
+import Button from "./components/Button/Button";
+import Input from './components/Input/Input'
+
+function App(props) {
   return (
-    // <ChakraProvider>
-      
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <Button />
+        <Input />
+
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Learning to use Storybook 
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+       
       </header>
     </div>
-    // </ChakraProvider>
   );
 }
 
