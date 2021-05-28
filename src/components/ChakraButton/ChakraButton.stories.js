@@ -6,7 +6,8 @@ export default {
   component: Button,
   argTypes: {
       variantColor: {control : 'text'},
-      children: {control : 'text'}
+      children: {control : 'text'},
+      onClick: {action : 'clicked'}
   }
 };
 //stories
@@ -25,3 +26,9 @@ Danger.args = {
     variantColor: 'red',
     children: 'Danger'
 }
+
+export const Log = () => (
+    <Button variantcolor='blue' onClick={() => console.log('Button clicked', process.env.STORYBOOK_THEME)}>
+        Log
+    </Button>
+)

@@ -1,6 +1,8 @@
 import React from 'react'
 import {ThemeProvider, theme, CSSReset, Box} from '@chakra-ui/react'
 import {addDecorator} from '@storybook/react'
+import {withConsole} from '@storybook/addon-console'
+
 import Center from '../src/components/Center/Center'
 // Global decorator. ALLT blir wrappat med center komponenten: se nedan
 // addDecorator(story => <Center>{story()}</Center>)
@@ -27,6 +29,8 @@ addDecorator(story => (
   </Box>
   </ThemeProvider>
 ))
+addDecorator((storyFn, context) => withConsole()(storyFn)(context))
+
 export const decorators = [
   (Story) => (
 <ThemeProvider theme={theme}>
