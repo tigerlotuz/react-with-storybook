@@ -4,7 +4,9 @@ import './Button.css';
 function Button(props) {
   const { variant = "primary", children, ...rest } = props;
   return (
-    <button className={`button ${variant}`} {...rest}>
+    <button 
+    onClick= {() => console.log("Button clicked")}
+    className={`button ${variant}`} {...rest}>
       {children}
     </button>
   );

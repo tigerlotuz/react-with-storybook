@@ -7,8 +7,8 @@ function App(props) {
   return (
     <div className="App">
       <header className="App-header">
-        <Button />
-        <Input />
+        <Button children="Button"/>
+        <Input placeholder="Words"/>
 
         <p>
           Learning to use Storybook 
